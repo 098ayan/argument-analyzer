@@ -22,7 +22,7 @@ def build_argument_graph(
     nodes = []
     edges = []
 
-    # ---------------- Conclusion ----------------
+    #  Conclusion 
     if conclusion:
         nodes.append({
             "id": "C",
@@ -31,7 +31,7 @@ def build_argument_graph(
             "color": DEFAULT_COLORS["conclusion"],
         })
 
-    # ---------------- Premises ----------------
+    # Premises
     for i, p in enumerate(premises):
         pid = f"P{i}"
         nodes.append({
@@ -49,7 +49,7 @@ def build_argument_graph(
                 "style": "solid",
             })
 
-    # ---------------- Objections ----------------
+    # Objections
     for i, o in enumerate(objections):
         oid = f"O{i}"
         o_type = o.get("type", "rebuttal")
