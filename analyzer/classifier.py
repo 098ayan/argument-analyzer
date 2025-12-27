@@ -1,8 +1,8 @@
 from typing import List, Tuple, Optional
 
-# -------------------------------------------------
-# Optional ML import (SAFE)
-# -------------------------------------------------
+
+#ML import (SAFE)
+
 try:
     from analyzer.ml_classifier import ml_classify_clause
     ML_AVAILABLE = True
@@ -10,9 +10,9 @@ except Exception:
     ML_AVAILABLE = False
 
 
-# -------------------------------------------------
-# Utility: split compound sentences
-# -------------------------------------------------
+
+ #split compound sentences
+
 def split_compound(sentence: str) -> Tuple[str, Optional[str]]:
     """
     Split sentences of the form:
@@ -30,9 +30,9 @@ def split_compound(sentence: str) -> Tuple[str, Optional[str]]:
     return sentence.strip(), None
 
 
-# -------------------------------------------------
-# Conclusion detection (RULES FIRST, ML OPTIONAL)
-# -------------------------------------------------
+
+# Conclusion detection 
+
 def detect_conclusion_with_confidence(
     sentences: List[str],
     use_ml: bool = False
@@ -80,9 +80,9 @@ def detect_conclusion_with_confidence(
     return None, 0.0, []
 
 
-# -------------------------------------------------
+
 # Premise extraction (CLAUSE-AWARE)
-# -------------------------------------------------
+
 def extract_premises(
     sentences: List[str],
     conclusion: Optional[str]
